@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="7701"/>
+    </dependencies>
+    <scenes>
+        <!--BaM天气-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller identifier="First" title="BaM天气" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Watchpods_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="1" height="1" alignment="left" layout="vertical" id="dE1-Ww-Beq">
+                            <items>
+                                <label alignment="left" text="City" id="tgb-Oa-SAj">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="font" type="system" pointSize="25"/>
+                                </label>
+                                <label alignment="left" text="weather" id="yD5-S9-vGA">
+                                    <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="20"/>
+                                </label>
+                                <label alignment="left" text="temp" id="i5a-FO-Jzj">
+                                    <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </label>
+                                <label alignment="left" verticalAlignment="bottom" text="date" id="nHr-vA-jEE">
+                                    <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="font" type="system" pointSize="12"/>
+                                </label>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="backGroup" destination="dE1-Ww-Beq" id="Y6P-Pv-eRv"/>
+                        <outlet property="labelCity" destination="tgb-Oa-SAj" id="fTj-e3-0lG"/>
+                        <outlet property="labelDate" destination="nHr-vA-jEE" id="SAT-3v-UT4"/>
+                        <outlet property="labelTemp" destination="i5a-FO-Jzj" id="9aL-Rw-RvP"/>
+                        <outlet property="labelWeather" destination="yD5-S9-vGA" id="5vA-48-Rbm"/>
+                        <segue destination="DGb-8K-XZa" kind="relationship" relationship="nextPage" id="v1g-ej-bAd"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="305" y="367"/>
+        </scene>
+        <!--选择城市-->
+        <scene sceneID="iOG-iS-o07">
+            <objects>
+                <controller identifier="Second" title="选择城市" id="DGb-8K-XZa" customClass="SecondInterfaceController" customModule="Watchpods_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="RaU-nT-tJ4">
+                            <items>
+                                <tableRow identifier="CityRow" id="5Lr-Mi-HP4" customClass="CityRow" customModule="Watchpods_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" id="ork-Ct-E7d">
+                                        <items>
+                                            <label alignment="left" text="cityName" id="rWD-KD-Avj"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="labelCityName" destination="rWD-KD-Avj" id="0s1-a1-eTR"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="RaU-nT-tJ4" id="G7a-ne-CA4"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="510" y="367"/>
+        </scene>
+    </scenes>
+</document>
