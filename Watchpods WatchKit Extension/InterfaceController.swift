@@ -32,6 +32,10 @@ class InterfaceController: WKInterfaceController {
             self.labelWeather.setText(city.weather)
             self.labelDate.setText(self.changeDate(city.date))
             self.backGroup.setBackgroundImageNamed(cityName)
+            self.labelDate.setHidden(false)
+            self.labelTemp.setHidden(false)
+            self.labelWeather.setHidden(false)
+            self.labelCity.setHidden(false)
         })
     }
     
@@ -47,6 +51,10 @@ class InterfaceController: WKInterfaceController {
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        labelDate.setHidden(true)
+        labelTemp.setHidden(true)
+        labelWeather.setHidden(true)
+        labelCity.setHidden(true)
         updateView()
     }
 
